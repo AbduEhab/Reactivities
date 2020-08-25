@@ -23,14 +23,16 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
-            return Ok(await _context.Values.ToListAsync());
+            var value = await _context.Values.ToListAsync();
+            return Ok(value);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<ActionResult<string>> Get(int id)
         {
-            return Ok(await _context.Values.FindAsync(id));
+            var value = await _context.Values.FindAsync(id);
+            return Ok(value);
         }
 
         // POST api/values
