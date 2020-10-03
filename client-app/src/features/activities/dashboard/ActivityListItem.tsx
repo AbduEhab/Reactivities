@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Button, Icon, Item, Segment } from "semantic-ui-react";
-import { IActivity } from "../../../app/models/activity";
+import React from 'react';
+import { Item, Button, Segment, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { IActivity } from '../../../app/models/activity';
 
 const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
   return (
@@ -9,17 +9,17 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
       <Segment>
         <Item.Group>
           <Item>
-            <Item.Image size="tiny" circular src="/assets/user.png" />
+            <Item.Image size='tiny' circular src='/assets/user.png' />
             <Item.Content>
-              <Item.Header as="a">{activity.title}</Item.Header>
-              <Item.Description>Hosted by $</Item.Description>
+              <Item.Header as='a'>{activity.title}</Item.Header>
+              <Item.Description>Hosted by Bob</Item.Description>
             </Item.Content>
           </Item>
         </Item.Group>
       </Segment>
       <Segment>
-        <Icon name="clock" /> {activity.date}
-        <Icon name="marker" /> {activity.venue}, {activity.city}
+        <Icon name='clock' /> {activity.date}
+        <Icon name='marker' /> {activity.venue}, {activity.city}
       </Segment>
       <Segment secondary>Attendees will go here</Segment>
       <Segment clearing>
@@ -27,9 +27,9 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
         <Button
           as={Link}
           to={`/activities/${activity.id}`}
-          floated="right"
-          content="View"
-          color="blue"
+          floated='right'
+          content='View'
+          color='blue'
         />
       </Segment>
     </Segment.Group>
